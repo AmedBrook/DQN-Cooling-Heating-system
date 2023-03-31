@@ -51,3 +51,8 @@ Project Organization
     │
     └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 
+
+### Project introduction. 
+This project aims to bring a new optimized cooling and heating system which will has the ability to reduce energy costs due to heating and cooling by up to 40%. 
+
+The solution created in this project is based on deep Q-Learning network technique which is a subfield of the deep learning and much developed subfield of the reinforecement learning. 
