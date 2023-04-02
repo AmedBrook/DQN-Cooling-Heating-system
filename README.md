@@ -58,24 +58,25 @@ The solution created in this project is based on deep Q-Learning network techniq
 
 # Parameters. 
 
-- The monthly average atmospheric temperature.
-- The optimal temperature range of the server, which we'll set as.
-- The minimum temperature, below which the server fails to operate.
-- The maximum temperature, above which the server fails to operate.
-- The minimum number of users in the server.
-- The maximum number of users in the server.
-- The maximum change of users in the server per minute.
-- The minimum rate of data transmission in the server.
-- The maximum rate of data transmission in the server.
-- The maximum change of the rate of data transmission per minute.
+- atmospheric_temperature: The monthly average atmospheric temperature.
+- optimal_temperature: The optimal temperature range of the server, which we'll set as.
+- min_temperature: The minimum temperature, below which the server fails to operate.
+- max_temperature: The maximum temperature, above which the server fails to operate.
+- min_number_users: The minimum number of users in the server.
+- max_number_users: The maximum number of users in the server.
+- max_update_users: The maximum change of users in the server per minute.
+- min_rate_data: The minimum rate of data transmission in the server.
+- max_rate_data: The maximum rate of data transmission in the server.
+- max_update_data: The maximum change of the rate of data transmission per minute.
+- out_range: The current temperature is within the range or not
 
 # Variables.
 
 - The temperature of the server at a given minute.
-- The number of users connected to the server at a given minute.
-- The rate of data transmission at a given minute.
-- The energy spent by the AI onto the server (to cool it down or heat it up) at a giving minute.
-- The energy that would be spent by the classic server's cooling system.
+- current_number_users: The number of users connected to the server at a given minute.
+- current_rate_data: The rate of data transmission at a given minute.
+- total_energy_ai: The energy spent by the AI onto the server (to cool it down or heat it up) at a giving minute.
+- total_energy_noai: The energy that would be spent by the classic server's cooling system.
 
 
 
@@ -120,7 +121,7 @@ $$
 
 $\newline$ 
 
-<em> where: 
+<em> where: <em\>
 
 
 
