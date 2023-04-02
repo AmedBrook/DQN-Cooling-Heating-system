@@ -11,8 +11,8 @@ class DQN(object):
         self.discount = discount
 
     # MAKING A METHOD THAT BUILDS THE MEMORY IN EXPERIENCE REPLAY
-    def remember(self, transition, game_over):
-        self.memory.append([transition, game_over])
+    def remember(self, transition, out_range):
+        self.memory.append([transition, out_range])
         if len(self.memory) > self.max_memory:
             del self.memory[0]
 
@@ -25,11 +25,11 @@ class DQN(object):
         targets = np.zeros((min(len_memory, batch_size), num_outputs))
         for i, idx in enumerate(np.random.randint(0, len_memory, size = min(len_memory, batch_size))):
             current_state, action, reward, next_state = self.memory[idx][0]
-            game_over = self.memory[idx][1]
+            out_range = self.memory[idx][1]
             inputs[i] = current_state
             targets[i] = model.predict(current_state)[0]
             Q_sa = np.max(model.predict(next_state)[0])
-            if game_over:
+            if out_range:
                 targets[i, action] = reward
             else:
                 targets[i, action] = reward + self.discount * Q_sa

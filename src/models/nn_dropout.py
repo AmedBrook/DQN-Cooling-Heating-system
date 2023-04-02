@@ -6,7 +6,7 @@ from keras.layers import Input, Dense, Dropout
 from keras.models import Model
 from keras.optimizers import Adam
 
-class Brain(object):
+class Network(object):
     
     # BUILDING A FULLY CONNECTED NEURAL NETWORK DIRECTLY INSIDE THE INIT METHOD
     

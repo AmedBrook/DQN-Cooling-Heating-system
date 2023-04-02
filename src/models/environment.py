@@ -29,7 +29,7 @@ class Environment(object):
         self.total_energy_ai = 0.0
         self.total_energy_noai = 0.0
         self.reward = 0.0
-        self.game_over = 0
+        self.out_range = 0
         self.train = 1
 
     # MAKING A METHOD THAT UPDATES THE ENVIRONMENT RIGHT AFTER THE AI PLAYS AN ACTION
@@ -81,17 +81,17 @@ class Environment(object):
         # Updating the new Server's Temperature when there is no AI
         self.temperature_noai += delta_intrinsic_temperature
         
-        # GETTING GAME OVER
+        # GETTING OUT RANGE
         
         if (self.temperature_ai < self.min_temperature):
             if (self.train == 1):
-                self.game_over = 1
+                self.out_range = 1
             else:
                 self.total_energy_ai += self.optimal_temperature[0] - self.temperature_ai
                 self.temperature_ai = self.optimal_temperature[0]
         elif (self.temperature_ai > self.max_temperature):
             if (self.train == 1):
-                self.game_over = 1
+                self.out_range = 1
             else:
                 self.total_energy_ai += self.temperature_ai - self.optimal_temperature[1]
                 self.temperature_ai = self.optimal_temperature[1]
@@ -100,7 +100,7 @@ class Environment(object):
         
         # Updating the Total Energy spent by the AI
         self.total_energy_ai += energy_ai
-        # Updating the Total Energy spent by the server's cooling system when there is no AI
+        # Updating the Total Energy spent by the classic cooling system when there is no AI
         self.total_energy_noai += energy_noai
         
         # SCALING THE NEXT STATE
@@ -110,9 +110,9 @@ class Environment(object):
         scaled_rate_data = (self.current_rate_data - self.min_rate_data) / (self.max_rate_data - self.min_rate_data)
         next_state = np.matrix([scaled_temperature_ai, scaled_number_users, scaled_rate_data])
         
-        # RETURNING THE NEXT STATE, THE REWARD, AND GAME OVER
+        # RETURNING THE NEXT STATE, THE REWARD, AND OUT RANGE
         
-        return next_state, self.reward, self.game_over
+        return next_state, self.reward, self.out_range
 
     # MAKING A METHOD THAT RESETS THE ENVIRONMENT
     
@@ -127,14 +127,14 @@ class Environment(object):
         self.total_energy_ai = 0.0
         self.total_energy_noai = 0.0
         self.reward = 0.0
-        self.game_over = 0
+        self.out_range = 0
         self.train = 1
 
-    # MAKING A METHOD THAT GIVES US AT ANY TIME THE CURRENT STATE, THE LAST REWARD AND WHETHER THE GAME IS OVER
+    # MAKING A METHOD THAT GIVES US AT ANY TIME THE CURRENT STATE, THE LAST REWARD AND WHETHER THE THE TEMPERATURE IS OUT OF RANGE OR NOT
     
     def observe(self):
         scaled_temperature_ai = (self.temperature_ai - self.min_temperature) / (self.max_temperature - self.min_temperature)
         scaled_number_users = (self.current_number_users - self.min_number_users) / (self.max_number_users - self.min_number_users)
         scaled_rate_data = (self.current_rate_data - self.min_rate_data) / (self.max_rate_data - self.min_rate_data)
         current_state = np.matrix([scaled_temperature_ai, scaled_number_users, scaled_rate_data])
-        return current_state, self.reward, self.game_over
+        return current_state, self.reward, self.out_range
