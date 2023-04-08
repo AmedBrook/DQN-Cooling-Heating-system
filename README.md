@@ -121,7 +121,7 @@ $$
 
 $\newline$ 
 
-<em> where: <em\>
+<em> where: 
 
 
 
@@ -139,11 +139,11 @@ $\alpha = 1 \hspace{.2cm}and\hspace{.2cm}  \beta = 0$.
 
 therefore the assumption becomes : $e_{\mathrm{hv}\;} = \alpha \vert T_{\mathrm{t+1}\;}-T_{\mathrm{t}\;}  \vert$.
 
-
+</em>
 
 # Study case. 
 
-We're dealing with a particular server located inside a data center that is governed by the preceeding list of parameters and variables. The number of users actively using the service is updated every minute as some new users sign up and some existing users log off.
+We are dealing with a particular server located inside a data center that is governed by the preceeding list of parameters and variables. The number of users actively using the service is updated every minute as some new users sign up and some existing users log off.
 Also, each minute some existing data is communicated outside the server and some new data is transmitted within, changing the server's internal data transmission rate. 
 
 So, based on Assumption 1 from before, the server's temperature is updated once every minute. 
@@ -157,9 +157,9 @@ $E_{\mathrm{t+1}\;} = \vert \Delta T_{\mathrm{t}\;}  \vert = \vert T_{\mathrm{t+
 
 therfore : 
 
-$E_{\mathrm{t}\;} = E_{\mathrm{t+1}\;} - E_{\mathrm{t}\;} $  if $E_{\mathrm{t+1}\;} > E_{\mathrm{t}\;}  $ (if the server is heated up)
+$E_{\mathrm{t}\;} = E_{\mathrm{t+1}\;} - E_{\mathrm{t}\;} $  if $E_{\mathrm{t+1}\;} > E_{\mathrm{t}\;}$ (if the server is heated up)
 
-$E_{\mathrm{t}\;} = E_{\mathrm{t}\;} - E_{\mathrm{t+1}\;} $  if $E_{\mathrm{t}\;} > E_{\mathrm{t+1}\;}  $ (if the server is cooled down)
+$E_{\mathrm{t}\;} = E_{\mathrm{t}\;} - E_{\mathrm{t+1}\;} $  if $E_{\mathrm{t}\;} > E_{\mathrm{t+1}\;}$ (if the server is cooled down)
 
 
 Thus, the difference in absolute temperature changes induced in the server between the AI and the unintelligent server's integrated cooling system between iteration t and iteration t+1 is equal to the energy saved by the AI at each iteration t (per minute): 
