@@ -93,7 +93,7 @@ $\textrm{Server temperature}$ = $b_{\mathrm{0}} + b_{\mathrm{1}} \cdot \textrm {
 
  <em>Where:</em> 
  
- $ b_{\mathrm{0}\;}$ ${\in}$  ${\rm I\!R}$, $ b_{\mathrm{1}\;} > 0,\hspace{.1cm}  b_{\mathrm{2}\;} > 0,\hspace{.1cm}  b_{\mathrm{3}\;} > 0$. 
+ $b_{\mathrm{0}\;}$ ${\in}$  ${\rm I\!R}$, $b_{\mathrm{1}\;} > 0,\hspace{.1cm}  b_{\mathrm{2}\;} > 0,\hspace{.1cm}b_{\mathrm{3}\;} > 0$. 
 
 
 Assuming we performe the multiple linear regression and I get the values : 
@@ -107,7 +107,7 @@ $$
 
 then the equation becomes: 
 
-<em>Server temperature</em> =  <em> Atmospheric temperature +  $ 1.25$ x number of users +  $ 1.25$ x Rate of data transmission.</em>
+$\textrm{Server temperature}$ = $\textrm{Atmospheric temperature} + 1.25 \cdot \textrm{number of users} + 1.25 \cdot \textrm{Rate of data transmission}.$
 
 <br>
 <br>
