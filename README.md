@@ -90,7 +90,9 @@ The server temperature is apporximated since I don't have hestorical data of the
 <em>Server temperature</em> =  <em>$ b_{\mathrm{0}\;}$ +  $ b_{\mathrm{1}\;}$ x Atmospheric temperature +  $ b_{\mathrm{2}\;}$ x number of users +  $ b_{\mathrm{3}\;}$ x Rate of data transmission.</em>
 
 
- <em>Where:</em> $ b_{\mathrm{0}\;}$ ${\in}$  ${\rm I\!R}$, $ b_{\mathrm{1}\;} > 0,\hspace{.1cm}  b_{\mathrm{2}\;} > 0,\hspace{.1cm}  b_{\mathrm{3}\;} > 0$. 
+ <em>Where:</em> 
+ 
+ $ b_{\mathrm{0}\;}$ ${\in}$  ${\rm I\!R}$, $ b_{\mathrm{1}\;} > 0,\hspace{.1cm}  b_{\mathrm{2}\;} > 0,\hspace{.1cm}  b_{\mathrm{3}\;} > 0$. 
 
 
 Assuming we performe the multiple linear regression and I get the values : 
@@ -157,9 +159,9 @@ $E_{\mathrm{t+1}\;} = \vert \Delta T_{\mathrm{t}\;}  \vert = \vert T_{\mathrm{t+
 
 therfore : 
 
-$E_{\mathrm{t}\;} = E_{\mathrm{t+1}\;} - E_{\mathrm{t}\;} $  if $E_{\mathrm{t+1}\;} > E_{\mathrm{t}\;}$ (if the server is heated up)
+$E_{\mathrm{t}\;} = E_{\mathrm{t+1}\;} - E_{\mathrm{t}\;}  if E_{\mathrm{t+1}\;} > E_{\mathrm{t}\;}$ (if the server is heated up)
 
-$E_{\mathrm{t}\;} = E_{\mathrm{t}\;} - E_{\mathrm{t+1}\;} $  if $E_{\mathrm{t}\;} > E_{\mathrm{t+1}\;}$ (if the server is cooled down)
+$E_{\mathrm{t}\;} = E_{\mathrm{t}\;} - E_{\mathrm{t+1}\;}   if E_{\mathrm{t}\;} > E_{\mathrm{t+1}\;}$ (if the server is cooled down)
 
 
 Thus, the difference in absolute temperature changes induced in the server between the AI and the unintelligent server's integrated cooling system between iteration t and iteration t+1 is equal to the energy saved by the AI at each iteration t (per minute): 
