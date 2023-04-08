@@ -93,21 +93,21 @@ $\textrm{Server temperature}$ = $b_{\mathrm{0}} + b_{\mathrm{1}} \cdot \textrm {
 
  <em>Where:</em> 
  
- $b_{\mathrm{0}\;}$ ${\in}$  ${\rm I\!R}$, $b_{\mathrm{1}\;} > 0,\hspace{.1cm}  b_{\mathrm{2}\;} > 0,\hspace{.1cm}b_{\mathrm{3}\;} > 0$. 
+ $b_{\mathrm{0}}$ ${\in}$  ${\rm I\!R}$, $b_{\mathrm{1}} > 0,\hspace{.1cm}  b_{\mathrm{2}} > 0,\hspace{.1cm}b_{\mathrm{3}} > 0$. 
 
 
 Assuming we performe the multiple linear regression and I get the values : 
 
 $$
-b_{\mathrm{0}\;} = 0,\hspace{.2cm}
-b_{\mathrm{1}\;} = 1, \hspace{.2cm}
-b_{\mathrm{2}\;} = 1.25\hspace{.2cm}
-b_{\mathrm{3}\;} = 1.25
+b_{\mathrm{0}} = 0,\hspace{.2cm}
+b_{\mathrm{1}} = 1, \hspace{.2cm}
+b_{\mathrm{2}} = 1.25\hspace{.2cm}
+b_{\mathrm{3}} = 1.25
 $$
 
 then the equation becomes: 
 
-$\textrm{Server temperature}$ = $\textrm{Atmospheric temperature} + 1.25 \cdot \textrm{number of users} + 1.25 \cdot \textrm{Rate of data transmission}.$
+$\textrm{Server temperature}$ = $\textrm{atmospheric temperature} + 1.25 \cdot \textrm{number of users} + 1.25 \cdot \textrm{rate of data transmission}.$
 
 <br>
 <br>
@@ -119,7 +119,7 @@ $\textrm{Server temperature}$ = $\textrm{Atmospheric temperature} + 1.25 \cdot \
 The cost of energy needed to bring back the server into the optimal temperature are approximated also with a linear regression. 
 
 $$
-e_{\mathrm{hv}\;} = \alpha \vert T_{\mathrm{t+1}\;}-T_{\mathrm{t}\;}  \vert + \beta
+e_{\mathrm{hv}} = \alpha \vert T_{\mathrm{t+1}}-T_{\mathrm{t}}  \vert + \beta
 $$
 
 $\newline$ 
@@ -128,9 +128,9 @@ $\newline$
 
 
 
-$e_{\mathrm{hv}\;}$ : is the energy spent either for heating or ventilation to bring back the server to optimal range of temperature. 
+$e_{\mathrm{hv}}$ : is the energy spent either for heating or ventilation to bring back the server to optimal range of temperature. 
 
-$\vert T_{\mathrm{t+1}\;}-T_{\mathrm{t}\;}  \vert$ : is the temperature change in the server between t and t+1.
+$\vert T_{\mathrm{t+1}}-T_{\mathrm{t}}  \vert$ : is the temperature change in the server between t and t+1.
 
 $\newline$ 
 
@@ -140,7 +140,7 @@ and indeed we dont't have reel temperature data so I assume that the value after
 
 $\alpha = 1 \hspace{.2cm}and\hspace{.2cm}  \beta = 0$.
 
-therefore the assumption becomes : $e_{\mathrm{hv}\;} = \alpha \vert T_{\mathrm{t+1}\;}-T_{\mathrm{t}\;}  \vert$.
+therefore the assumption becomes : $e_{\mathrm{hv}} = \alpha \vert T_{\mathrm{t+1}}-T_{\mathrm{t}}  \vert$.
 
 </em>
 
@@ -156,28 +156,28 @@ The temperature of the server is updated every minute. If the server is using it
 Instead, if the server is employing AI, its the classic cooling system is turned off, and the AI is responsible for updating the server's temperature in order to control it optimally. As opposed to the classic cooling system, the AI solution modifies the temperature after making certain forecasts in the past. The AI anticipates whether it should cool down the server, do nothing, or heat it up, and then takes action before there is a change in the number of users and the rate of data transmission, which would cause a change in the server's temperature. The temperature changes after that, and the AI repeats the process. 
 
 Given that these two systems are different from one another, we can assess each one independently to compare how well it performs. For example, we could train or run the AI on a server while monitoring how much energy the classic cooling system would have consumed under the same conditions. The AI's main objective is to reduce the server's energy consumption, as a result, our AI must attempt to consume less energy than the server's non-intelligent cooling system would. Given that Assumption 2 stated above states that the energy used by every system on the server is proportional to the change in temperature within one unit of time:
-$E_{\mathrm{t+1}\;} = \vert \Delta T_{\mathrm{t}\;}  \vert = \vert T_{\mathrm{t+1}\;}-T_{\mathrm{t}\;}  \vert$ 
+$E_{\mathrm{t+1}} = \vert \Delta T_{\mathrm{t}\;}  \vert = \vert T_{\mathrm{t+1}\;}-T_{\mathrm{t}}  \vert$ 
 
 therfore : 
 
-$E_{\mathrm{t}\;} = E_{\mathrm{t+1}\;} - E_{\mathrm{t}\;}  if E_{\mathrm{t+1}\;} > E_{\mathrm{t}\;}$ (if the server is heated up)
+$E_{\mathrm{t}} = E_{\mathrm{t+1}} - E_{\mathrm{t}}  if E_{\mathrm{t+1}} > E_{\mathrm{t}}$ (if the server is heated up)
 
-$E_{\mathrm{t}\;} = E_{\mathrm{t}\;} - E_{\mathrm{t+1}\;}   if E_{\mathrm{t}\;} > E_{\mathrm{t+1}\;}$ (if the server is cooled down)
+$E_{\mathrm{t}} = E_{\mathrm{t}} - E_{\mathrm{t+1}}   if E_{\mathrm{t}} > E_{\mathrm{t+1}}$ (if the server is cooled down)
 
 
 Thus, the difference in absolute temperature changes induced in the server between the AI and the unintelligent server's integrated cooling system between iteration t and iteration t+1 is equal to the energy saved by the AI at each iteration t (per minute): 
 
 Energy saved by the AI between $t$ and $t +1$
 
-$\vert \Delta T_{\mathrm{t}\;}^{noAI} \vert - \vert \Delta T_{\mathrm{t}\;}^{AI} \vert$ 
+$\vert \Delta T_{\mathrm{t}}^{noAI} \vert - \vert \Delta T_{\mathrm{t}}^{AI} \vert$ 
 
 
 where: 
 
-$\Delta T_{\mathrm{t}\;}^{noAI}$ : is is the change of temperature that the classic cooling
+$\Delta T_{\mathrm{t}}^{noAI}$ : is is the change of temperature that the classic cooling
 system would cause in the server during the iteration t, that is, from $t$ to $t +1$ minute. 
 
-$\Delta T_{\mathrm{t}\;}^{AI}$ : is the change of temperature that the AI would cause in the server
+$\Delta T_{\mathrm{t}}^{AI}$ : is the change of temperature that the AI would cause in the server
 during the iteration t, that is, from $t$  to $t +1$ minute.
 
 
