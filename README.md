@@ -87,7 +87,12 @@ The solution created in this project is based on deep Q-Learning network techniq
 
 The server temperature is apporximated since I don't have hestorical data of the server temperature. I apporximate the temperature through the multiple linear regression equation:
 
-$\textrm{Server Temperature} = b_{\mathrm{0}\;}$ +  $ b_{\mathrm{1}\;}$ x Atmospheric temperature +  $ b_{\mathrm{2}\;}$ x number of users +  $ b_{\mathrm{3}\;}$ x Rate of data transmission.
+<em>Server temperature</em> =  <em>
+
+$\textrm{Server temperature} = \textrm b_{\mathrm{0}\;}$ +  $ b_{\mathrm{1}\;}$ x Atmospheric temperature +  $ b_{\mathrm{2}\;}$ x number of users +  $ b_{\mathrm{3}\;}$ x Rate of data transmission.
+
+
+$ b_{\mathrm{0}\;}$ +  $ b_{\mathrm{1}\;}$ x Atmospheric temperature +  $ b_{\mathrm{2}\;}$ x number of users +  $ b_{\mathrm{3}\;}$ x Rate of data transmission.</em>
 
 
  <em>Where:</em> 
