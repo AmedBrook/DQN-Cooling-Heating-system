@@ -124,7 +124,7 @@ $$
 
 $\newline$ 
 
-<em> where: 
+where: 
 
 
 
@@ -142,7 +142,7 @@ $\alpha = 1 \hspace{.2cm}and\hspace{.2cm}  \beta = 0$.
 
 therefore the assumption becomes : $e_{\mathrm{hv}} = \alpha \vert T_{\mathrm{t+1}}-T_{\mathrm{t}}  \vert$.
 
-</em>
+
 
 # Study case. 
 
@@ -172,7 +172,7 @@ Energy saved by the AI between $t$ and $t +1$
 $\vert \Delta T_{\mathrm{t}}^{noAI} \vert - \vert \Delta T_{\mathrm{t}}^{AI} \vert$ 
 
 
-where: 
+Where: 
 
 $\Delta T_{\mathrm{t}}^{noAI}$ : is is the change of temperature that the classic cooling
 system would cause in the server during the iteration t, that is, from $t$ to $t +1$ minute. 
