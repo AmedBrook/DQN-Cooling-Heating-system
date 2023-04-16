@@ -15,15 +15,11 @@ Project Organization
     │   ├── processed      <- The final, canonical data sets for modeling.
     │   └── raw            <- The original, immutable data dump.
     │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-    │
     ├── models             <- Trained and serialized models, model predictions, or model summaries
     │
     ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
     │                         the creator's initials, and a short `-` delimited description, e.g.
     │                         `1.0-jqp-initial-data-exploration`.
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
     │
     ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
     │   └── figures        <- Generated graphics and figures to be used in reporting
@@ -58,17 +54,17 @@ The solution created in this project is based on deep Q-Learning network techniq
 
 # Parameters. 
 
-- atmospheric_temperature: The monthly average atmospheric temperature.
-- optimal_temperature: The optimal temperature range of the server, which we'll set as.
-- min_temperature: The minimum temperature, below which the server fails to operate.
-- max_temperature: The maximum temperature, above which the server fails to operate.
-- min_number_users: The minimum number of users in the server.
-- max_number_users: The maximum number of users in the server.
-- max_update_users: The maximum change of users in the server per minute.
-- min_rate_data: The minimum rate of data transmission in the server.
-- max_rate_data: The maximum rate of data transmission in the server.
-- max_update_data: The maximum change of the rate of data transmission per minute.
-- out_range: The current temperature is within the range or not
+-atmospheric_temperature: The monthly average atmospheric temperature.
+-optimal_temperature: The optimal temperature range of the server, which we'll set as.
+-min_temperature: The minimum temperature, below which the server fails to operate.
+-max_temperature: The maximum temperature, above which the server fails to operate.
+-min_number_users: The minimum number of users in the server.
+-max_number_users: The maximum number of users in the server.
+-max_update_users: The maximum change of users in the server per minute.
+-min_rate_data: The minimum rate of data transmission in the server.
+-max_rate_data: The maximum rate of data transmission in the server.
+-max_update_data: The maximum change of the rate of data transmission per minute.
+-out_range: The current temperature is within the range or not
 
 # Variables.
 
@@ -82,7 +78,7 @@ The solution created in this project is based on deep Q-Learning network techniq
 
 # Asumptions. 
 
-## First asumption: 
+## 1st asumption: 
 <br> 
 
 The server temperature is apporximated since I don't have hestorical data of the server temperature. I apporximate the temperature through the multiple linear regression equation:
@@ -113,7 +109,7 @@ $\textrm{Server temperature}$ = $\textrm{atmospheric temperature} + 1.25 \cdot \
 <br>
 <br>
 
-## Second assumption: 
+## 2nd assumption: 
 <br>
 
 The cost of energy needed to bring back the server into the optimal temperature are approximated also with a linear regression. 
