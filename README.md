@@ -156,9 +156,9 @@ $E_{\mathrm{t+1}} = \vert \Delta T_{\mathrm{t}\;}  \vert = \vert T_{\mathrm{t+1}
 
 therfore : 
 
-$E_{\mathrm{t}} = E_{\mathrm{t+1}} - E_{\mathrm{t}}  if E_{\mathrm{t+1}} > E_{\mathrm{t}}$ (if the server is heated up)
+$E_{\mathrm{t}} = E_{\mathrm{t+1}} - E_{\mathrm{t}} \hspace{.2cm}, if \hspace{.2cm} E_{\mathrm{t+1}} > E_{\mathrm{t}}$ (if the server is heated up)
 
-$E_{\mathrm{t}} = E_{\mathrm{t}} - E_{\mathrm{t+1}}   if E_{\mathrm{t}} > E_{\mathrm{t+1}}$ (if the server is cooled down)
+$E_{\mathrm{t}} = E_{\mathrm{t}} - E_{\mathrm{t+1}} \hspace{.2cm}, if \hspace{.2cm} E_{\mathrm{t}} > E_{\mathrm{t+1}}$ (if the server is cooled down)
 
 
 Thus, the difference in absolute temperature changes induced in the server between the AI and the unintelligent server's integrated cooling system between iteration t and iteration t+1 is equal to the energy saved by the AI at each iteration t (per minute): 
