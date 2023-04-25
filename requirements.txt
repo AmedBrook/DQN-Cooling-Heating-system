@@ -2,7 +2,6 @@
 # external requirements
 flake8
 python-dotenv
-os
 numpy
-random
 keras
+notebook
